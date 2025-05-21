@@ -4,6 +4,11 @@ import '../widgets/menu_item.dart';
 import '../utils/app_colors.dart';
 import '../utils/svg_icons.dart';
 import 'article_screen.dart';
+import 'laporan_screen.dart';
+import 'detail_screen_laporan_tanam.dart';
+import 'detail_screen_laporan_kontrol.dart';
+import 'detail_screen_laporan_panen.dart';
+import 'weather_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -41,7 +46,7 @@ class HomeScreen extends StatelessWidget {
                         Positioned(
                           top: -79,
                           child: Image.asset(
-                            'asset/1.png',
+                            'assets/1.png',
                             width: 497,
                             height: 497,
                           ),
@@ -81,8 +86,7 @@ class HomeScreen extends StatelessWidget {
                           // Market
                           GestureDetector(
                             onTap: () {
-                              Navigator.pushNamed(context,
-                                  '/market'); // Ganti dengan route yang sesuai
+                              Navigator.pushNamed(context, '/market');
                             },
                             child: MenuItem(
                               svgIcon: SvgIcons.marketIcon,
@@ -95,7 +99,7 @@ class HomeScreen extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               Navigator.pushNamed(context,
-                                  '/report'); // Ganti dengan route yang sesuai
+                                  '/laporan'); // Ganti dengan route yang sesuai
                             },
                             child: MenuItem(
                               svgIcon: SvgIcons.reportIcon,
@@ -107,8 +111,8 @@ class HomeScreen extends StatelessWidget {
                           // Article
                           GestureDetector(
                             onTap: () {
-                              Navigator.push(context,
-                                  MaterialPageRoute(builder: (context) => const artikelscreen())); // Ganti dengan route yang sesuai
+                              Navigator.pushNamed(context,
+                                  '/article'); // Sama dengan route yang lain
                             },
                             child: MenuItem(
                               svgIcon: SvgIcons.articleIcon,
@@ -121,11 +125,11 @@ class HomeScreen extends StatelessWidget {
                           GestureDetector(
                             onTap: () {
                               Navigator.pushNamed(context,
-                                  '/weather'); // Ganti dengan route yang sesuai
+                                  '/weather'); // route harus '/weather'
                             },
                             child: MenuItem(
                               svgIcon: SvgIcons.weatherIcon,
-                              label: 'cuaca & Prediksi',
+                              label: 'cuaca',
                               backgroundColor: AppColors.menuItem4BgColor,
                             ),
                           ),

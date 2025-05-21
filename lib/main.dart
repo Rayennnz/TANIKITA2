@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'screens/home_screen.dart';
-
+import 'screens/laporan_screen.dart';
+import 'screens/article_screen.dart';
+import 'screens/weather_screen.dart';
+import 'screens/market_screen.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
 
@@ -38,6 +41,12 @@ class MyApp extends StatelessWidget {
         ),
       ),
       home: const HomeScreen(),
+      routes: {
+        '/article': (context) => const ArtikelScreen(), // atau ArticleScreen
+        '/laporan': (context) => const LaporanScreen(),
+        '/weather': (context) => const WeatherScreen(),
+        '/market': (context) => const MarketScreen(),
+      },
     );
   }
 }
